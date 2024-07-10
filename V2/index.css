@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: #f1f1f1;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-in{
+    padding: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 90vh;
+    width: 95%;
+}
+.container-one{
+    height: 45vh;
+    width: 100%;
+}
+.container-heading{
+    width: 100%;
+    text-align: center;
+}
+.container-row{
+    width: 100%;
+    /* background-color: red; */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-row button{
+    background-color: lightblue;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 10%;
+}
+.container-row select{
+    background-color: lightblue;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 10%;
+}
+.lot-box{
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 10%;
+    text-align: center;
+}
+.lot-box button{
+    border: 2px solid transparent;
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    /* background-color: red */
+}
+.container-row input[type="text"]{
+    background-color: lightblue;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 10%;
+}
+.container-two{
+    height: 45vh;
+    width: 100%;
+}
+#options-table{
+    width: 100%;
+    border: 2px solid black;
+    padding: 0.5rem;
+}
+#options-table th{
+    border-bottom: 2px solid black;
+    padding: 0.5rem;
+}
+#options-table td{
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 0.5rem;
+}
+tr button{
+    background-color: lightblue;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: black;
+    
+}

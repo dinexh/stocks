@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-in">
+            <div class="container-one">
+                <div class="container-heading">
+                    <h1>Stock Options</h1>
+                </div>
+                <div class="container-row">
+                    <div class="lot-box">
+                        <button id="decrement-lots-1">-</button>
+                        <span id="lots-value-1">0</span>
+                        <button id="increment-lots-1">+</button>
+                    </div>
+                    <button class="left-button" data-type="E">E</button>
+                    <button class="left-button" data-type="S-CE">S-CE</button>
+                    <button class="left-button" data-type="B-CE">B-CE</button>
+                    <select name="amount" id="amount">
+                        <option value="20000">20000</option>
+                        <option value="40000">40000</option>
+                        <option value="60000">60000</option>
+                        <option value="80000">80000</option>
+                        <option value="100000">100000</option>
+                        <option value="120000">120000</option>
+                    </select>
+                    <button class="right-button" data-type="B-PE">B-PE</button>
+                    <button class="right-button" data-type="S-PE">S-PE</button>
+                    <button class="right-button" data-type="E">E</button>
+                    <div class="lot-box">
+                        <button id="decrement-lots-2">-</button>
+                        <span id="lots-value-2">0</span>
+                        <button id="increment-lots-2">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-two">
+                <table id="options-table">
+                    <thead>
+                        <tr>
+                            <th>Lots</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
