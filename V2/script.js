@@ -18,18 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
             <td><span class="lots-value">${lots}</span></td>
             <td>${optionType}</td>
             <td>${totalAmount}</td>
-            <td>
-                <button class="sl">SL</button>
-                <button class="tsl">TSL</button>
-                <button class="delete">Delete</button>
-            </td>
+            <td><button class="sl-button" data-lots="${lots}">SL</button></td>
+            <td><button class="tsl-button" data-lots="${lots}">TSL</button></td>
+            <td><button class="delete">Delete</button></td>
         `;
 
         optionsTable.appendChild(row);
         
         row.querySelector('.delete').addEventListener('click', handleDelete);
-        row.querySelector('.sl').addEventListener('click', handleSL);
-        row.querySelector('.tsl').addEventListener('click', handleTSL);
+        row.querySelector('.sl-button').addEventListener('click', handleSL);
+        row.querySelector('.tsl-button').addEventListener('click', handleTSL);
     }
 
     function handleButtonClick(event) {
@@ -54,11 +52,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleSL(event) {
-        alert('SL button clicked');
+        const lots = parseInt(event.target.getAttribute('data-lots'));
+        alert(`Setting Stop Loss for ${lots} lots`);
+        // Implement your SL functionality here
     }
 
     function handleTSL(event) {
-        alert('TSL button clicked');
+        const lots = parseInt(event.target.getAttribute('data-lots'));
+        alert(`Setting Trailing Stop Loss for ${lots} lots`);
+        // Implement your TSL functionality here
     }
 
     function handleIncrement(event, lotsValue) {
