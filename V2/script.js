@@ -12,10 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const conversionAmountInput = document.getElementById('conversion-amount');
     const convertedValueSpan = document.getElementById('converted-value');
-    const buyButton = document.getElementById('buy-button');
-    const sellButton = document.getElementById('sell-button');
-    const submitButton = document.getElementById('submit-button');
     const convertButton = document.getElementById('convert-button');
+    const buySellButton = document.getElementById('buy-sell-button');
+    const submitButton = document.getElementById('submit-button');
 
     function addOptionToTable(lots, optionType, amount) {
         const totalAmount = lots * amount;
@@ -75,6 +74,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function toggleBuySell() {
+        if (buySellButton.textContent === 'Buy') {
+            buySellButton.textContent = 'Sell';
+        } else {
+            buySellButton.textContent = 'Buy';
+        }
+        let alertmessage = buySellButton.textContent;
+    }
+
     incrementLots1.addEventListener('click', (event) => handleIncrement(event, lotsValue1));
     decrementLots1.addEventListener('click', (event) => handleDecrement(event, lotsValue1));
     incrementLots2.addEventListener('click', (event) => handleIncrement(event, lotsValue2));
@@ -84,19 +92,10 @@ document.addEventListener('DOMContentLoaded', function() {
     rightButtons.forEach(button => button.addEventListener('click', handleButtonClick));
 
     convertButton.addEventListener('click', handleConversion);
-
-    buyButton.addEventListener('click', function() {
-        alert('Buy action');
-        // Implement your buy functionality here
-    });
-
-    sellButton.addEventListener('click', function() {
-        alert('Sell action');
-        // Implement your sell functionality here
-    });
+    buySellButton.addEventListener('click', toggleBuySell);
 
     submitButton.addEventListener('click', function() {
-        alert('Submit action ');
-        // Implement your submit functionality here
+        const alertmessage = buySellButton.textContent;
+        alert(alertmessage);
     });
 });
