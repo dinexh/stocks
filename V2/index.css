@@ -19,8 +19,33 @@
     width: 95%;
 }
 .container-one{
-    height: 45vh;
+    height: 20vh;
     width: 100%;
+}
+.container-in-one{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: lightblue; */
+    margin-bottom: 1rem;
+}
+.container-in-one table{
+    /* background-color: red; */
+    padding: 0.5rem;
+    border: 2px solid black;
+}
+.container-in-one table th{
+    border-bottom: 2px solid black;
+    padding: 0.5rem;
+}
+.container-in-one button{
+    background-color: black;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: white;
+
 }
 .container-heading{
     width: 100%;

@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const decrementLots2 = document.getElementById('decrement-lots-2');
     const optionsTable = document.getElementById('options-table').querySelector('tbody');
 
+    const conversionAmountInput = document.getElementById('conversion-amount');
+    const convertedValueSpan = document.getElementById('converted-value');
+    const buyButton = document.getElementById('buy-button');
+    const sellButton = document.getElementById('sell-button');
+    const submitButton = document.getElementById('submit-button');
+    const convertButton = document.getElementById('convert-button');
+
     function addOptionToTable(lots, optionType, amount) {
         const totalAmount = lots * amount;
         const row = document.createElement('tr');
@@ -18,30 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
             <td><span class="lots-value">${lots}</span></td>
             <td>${optionType}</td>
             <td>${totalAmount}</td>
-            <td>
-                <div class="sl-box">
-                    <button class="sl-decrement">-</button>
-                    <span class="sl-value">0</span>
-                    <button class="sl-increment">+</button>
-                </div>
-            </td>
-            <td>
-                <div class="tsl-box">
-                    <button class="tsl-decrement">-</button>
-                    <span class="tsl-value">0</span>
-                    <button class="tsl-increment">+</button>
-                </div>
-            </td>
+            <td><input type="text" class="sl-input" /></td>
+            <td><input type="text" class="tsl-input" /></td>
             <td><button class="delete">Delete</button></td>
         `;
 
         optionsTable.appendChild(row);
         
         row.querySelector('.delete').addEventListener('click', handleDelete);
-        row.querySelector('.sl-increment').addEventListener('click', (event) => handleIncrement(event, row.querySelector('.sl-value')));
-        row.querySelector('.sl-decrement').addEventListener('click', (event) => handleDecrement(event, row.querySelector('.sl-value')));
-        row.querySelector('.tsl-increment').addEventListener('click', (event) => handleIncrement(event, row.querySelector('.tsl-value')));
-        row.querySelector('.tsl-decrement').addEventListener('click', (event) => handleDecrement(event, row.querySelector('.tsl-value')));
     }
 
     function handleButtonClick(event) {
@@ -65,13 +56,22 @@ document.addEventListener('DOMContentLoaded', function() {
         row.remove();
     }
 
-    function handleIncrement(event, valueElement) {
-        valueElement.textContent = parseInt(valueElement.textContent) + 1;
+    function handleIncrement(event, lotsValue) {
+        lotsValue.textContent = parseInt(lotsValue.textContent) + 1;
     }
 
-    function handleDecrement(event, valueElement) {
-        if (parseInt(valueElement.textContent) > 0) {
-            valueElement.textContent = parseInt(valueElement.textContent) - 1;
+    function handleDecrement(event, lotsValue) {
+        if (parseInt(lotsValue.textContent) > 0) {
+            lotsValue.textContent = parseInt(lotsValue.textContent) - 1;
+        }
+    }
+
+    function handleConversion() {
+        const enteredAmount = conversionAmountInput.value;
+        if (enteredAmount) {
+            convertedValueSpan.textContent = `${enteredAmount} CE`;
+        } else {
+            convertedValueSpan.textContent = "--";
         }
     }
 
@@ -82,4 +82,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     leftButtons.forEach(button => button.addEventListener('click', handleButtonClick));
     rightButtons.forEach(button => button.addEventListener('click', handleButtonClick));
+
+    convertButton.addEventListener('click', handleConversion);
+
+    buyButton.addEventListener('click', function() {
+        alert('Buy action');
+        // Implement your buy functionality here
+    });
+
+    sellButton.addEventListener('click', function() {
+        alert('Sell action');
+        // Implement your sell functionality here
+    });
+
+    submitButton.addEventListener('click', function() {
+        alert('Submit action ');
+        // Implement your submit functionality here
+    });
 });

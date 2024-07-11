@@ -40,6 +40,32 @@
                     </div>
                 </div>
             </div>
+            <div class="container-in-one">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Amount (PE)</th>
+                            <th>Change</th>
+                            <th>Converted (CE)</th>
+                            <th>Buy</th>
+                            <th>Sell</th>
+                            <th>Submit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="number" id="conversion-amount" placeholder="Enter amount" />
+                            </td>
+                            <td><button onclick="handleConversion()" id="convert-button">Convert</button></td>
+                            <td><span id="converted-value">--</span></td>
+                            <td><button id="buy-button">Buy</button></td>
+                            <td><button id="sell-button">Sell</button></td>
+                            <td><button id="submit-button">Submit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="container-two">
                 <table id="options-table">
                     <thead>
@@ -53,7 +79,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                     </tbody>
                 </table>
             </div>
